@@ -726,8 +726,9 @@ footer{text-align:center;padding:28px 0 40px;color:var(--muted);font-size:12px}
 
     $("erro").textContent="";
 
-    window.scrollTo({top:0,behavior:"smooth"});
-});
+window.scrollTo({top:0,behavior:"smooth"});
+
+  });
 
 })();
 
