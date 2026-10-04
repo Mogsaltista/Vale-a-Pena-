@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<meta name="theme-color" content="#0b1120">
+
+<title>Vale a Pena? | Compare antes de comprar</title>
+
+<style>
+
+:root {
+
+  --bg:#0b1120;
+
+  --panel:#141e30;
+
+  --field:#0d1626;
+
+  --border:#2b3a52;
+
+  --text:#f4f7ff;
+
+  --muted:#a4b1c8;
+
+  --green:#52e0a0;
+
+  --blue:#7ba7ff;
+
+}
+
+*{box-sizing:border-box}
+
+body{
+
+  margin:0;background:var(--bg);color:var(--text);
+
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+
+  line-height:1.5;
+
+}
+
+.container{width:calc(100% - 32px);max-width:760px;margin:auto}
+
+header{padding:22px 0;border-bottom:1px solid var(--border)}
+
+.brand{font-size:23px;font-weight:900;letter-spacing:-.8px}
+
+.brand span{color:var(--green)}
+
+.tagline{font-size:13px;color:var(--muted)}
+
+.hero{padding:34px 0 20px}
+
+.eyebrow{font-size:12px;letter-spacing:1.5px;color:var(--green);font-weight:800}
+
+h1{font-size:clamp(32px,8vw,45px);line-height:1.1;letter-spacing:-1.5px;margin:10px 0}
+
+p{margin-top:8px}
+
+.hero p,.subtitle,.hint,.muted{color:var(--muted)}
+
+.panel{background:var(--panel);border:1px solid var(--border);border-radius:17px;padding:20px;margin:18px 0}
+
+h2{font-size:21px;margin:0 0 5px}
+
+.subtitle{font-size:13px;margin:0 0 20px}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+
+.field{margin-bottom:15px;min-width:0}
+
+label{display:block;font-size:13px;font-weight:650;margin-bottom:7px}
+
+input,select{
+
+  display:block;width:100%;min-width:0;padding:12px 10px;
+
+  color:var(--text);background:var(--field);
+
+  border:1px solid var(--border);border-radius:10px;font-size:15px;
+
+}
+
+input:focus,select:focus{outline:2px solid var(--green);outline-offset:1px}
+
+.section-title{font-weight:800;margin:24px 0 12px}
+
+.hint{font-size:12px;margin-top:4px}
+
+.product-title{font-weight:800;display:flex;gap:8px;align-items:center;margin-bottom:15px}
+
+.dot{width:10px;height:10px;border-radius:50%;background:var(--blue);display:inline-block}
+
+.dot.green{background:var(--green)}
+
+button{font:inherit;cursor:pointer}
+
+.primary{
+
+  width:100%;padding:15px;border:0;border-radius:11px;
+
+  background:var(--green);color:#082016;font-weight:850;margin-top:10px;
+
+}
+
+.primary:active{opacity:.8}
+
+.error{color:#ff9b9b;font-size:13px;margin-top:10px}
+
+.hidden{display:none!important}
+
+.winner{text-align:center;padding:23px 12px;background:#112b27;border:1px solid #337d60;border-radius:14px;margin:18px 0}
+
+.trophy{font-size:35px}
+
+.winner h2{color:var(--green);font-size:25px;margin:8px 0}
+
+.winner p{font-size:14px;color:#c8e8dc;margin:0}
+
+.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:15px 0}
+
+.stat{background:var(--field);padding:13px;border:1px solid var(--border);border-radius:11px;min-width:0}
+
+.stat small{display:block;color:var(--muted);font-size:12px}
+
+.stat strong{display:block;font-size:20px;margin:5px 0;overflow-wrap:anywhere}
+
+.comparison-row{padding:15px 0;border-bottom:1px solid var(--border)}
+
+.comparison-row:last-child{border-bottom:0}
+
+.metric{font-size:14px;font-weight:750;margin-bottom:10px}
+
+.values{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+.value{font-size:13px;color:var(--muted);overflow-wrap:anywhere;min-width:0}
+
+.value strong{display:block;font-size:16px;color:var(--text);overflow-wrap:anywhere}
+
+.value.best strong{color:var(--green)}
+
+.badge{display:inline-block;font-size:10px;color:var(--green);background:#173b30;padding:3px 7px;border-radius:20px;margin-top:5px;font-weight:800}
+
+.verdict{font-size:14px;color:#d2dced}
+
+.disclaimer{font-size:12px;color:var(--muted);margin-top:18px}
+
+footer{text-align:center;padding:25px 0 35px;font-size:12px;color:var(--muted)}
+
+@media(max-width:420px){
+
+  .panel{padding:15px}
+
+  input,select{font-size:14px;padding:11px 8px}
+
+  .stat strong{font-size:17px}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+  <div class="container">
+
+    <div class="brand">VALE <span>A PENA?</span></div>
+
+    <div class="tagline">Decisões melhores. Dinheiro mais bem gasto.</div>
+
+  </div>
+
+</header>
+
+<main class="container">
+
+  <section class="hero">
+
+    <div class="eyebrow">COMPRE COM INTELIGÊNCIA</div>
+
+    <h1>Antes de comprar,<br>compare.</h1>
+
+    <p>Dois produtos, uma decisão. Compare preços, durabilidade e custo por uso para descobrir qual opção faz mais sentido para você.</p>
+
+  </section>
+
+  <form id="formulario">
+
+    <section class="panel">
+
+      <h2>01. Suas opções</h2>
+
+      <p class="subtitle">Informe os produtos que está pensando em comprar.</p>
+
+      <div class="grid">
+
+        <div class="field">
+
+          <label for="nomeA">Produto A</label>
+
+          <input id="nomeA" placeholder="Ex.: iPhone 15" maxlength="70" required>
+
+        </div>
+
+        <div class="field">
+
+          <label for="nomeB">Produto B</label>
+
+          <input id="nomeB" placeholder="Ex.: Galaxy S24" maxlength="70" required>
+
+        </div>
+
+        <div class="field">
+
+          <label for="precoA">Preço do A (R$)</label>
+
+          <input id="precoA" type="number" min="0.01" step="0.01" placeholder="3500" required>
+
+        </div>
+
+        <div class="field">
+
+          <label for="precoB">Preço do B (R$)</label>
+
+          <input id="precoB" type="number" min="0.01" step="0.01" placeholder="3000" required>
+
+        </div>
+
+      </div>
+
+      <div class="section-title">02. Durabilidade estimada</div>
+
+      <div class="grid">
+
+        <div class="field">
+
+          <label for="durA">Duração do A (anos)</label>
+
+          <input id="durA" type="number" min="0.1" max="100" step="0.1" placeholder="5" required>
+
+        </div>
+
+        <div class="field">
+
+          <label for="durB">Duração do B (anos)</label>
+
+          <input id="durB" type="number" min="0.1" max="100" step="0.1" placeholder="4" required>
+
+        </div>
+
+      </div>
+
+      <p class="hint">Informe quanto tempo você acredita que cada produto vai durar.</p>
+
+      <div class="section-title">03. Frequência de uso</div>
+
+      <div class="grid">
+
+        <div class="field">
+
+          <label for="usoA">Usos por semana — A</label>
+
+          <input id="usoA" type="number" min="0" step="1" placeholder="35" required>
+
+        </div>
+
+        <div class="field">
+
+          <label for="usoB">Usos por semana — B</label>
+
+          <input id="usoB" type="number" min="0" step="1" placeholder="35" required>
+
+        </div>
+
+      </div>
+
+      <p class="hint">Considere uma utilização como uma sessão ou ocasião de uso. Use o mesmo critério para ambos.</p>
+
+      <div class="section-title">04. Sua prioridade</div>
+
+      <div class="field">
+
+        <label for="prioridade">O que mais importa?</label>
+
+        <select id="prioridade">
+
+          <option value="equilibrado">Equilíbrio geral</option>
+
+          <option value="preco">Gastar menos agora</option>
+
+          <option value="durabilidade">Durar mais tempo</option>
+
+          <option value="uso">Menor custo por utilização</option>
+
+        </select>
+
+      </div>
+
+      <button class="primary" type="submit">Comparar produtos →</button>
+
+      <div id="erro" class="error" role="alert"></div>
+
+    </section>
+
+  </form>
+
+  <section id="resultado" class="panel hidden" aria-live="polite">
+
+    <div class="eyebrow">SUA ANÁLISE</div>
+
+    <h2>Resultado da comparação</h2>
+
+    <p class="subtitle">Confira os números antes de decidir.</p>
+
+    <div class="winner">
+
+      <div class="trophy">🏆</div>
+
+      <h2 id="vencedor"></h2>
+
+      <p id="motivo"></p>
+
+    </div>
+
+    <div class="stats">
+
+      <div class="stat">
+
+        <small>Menor preço inicial</small>
+
+        <strong id="menorPreco"></strong>
+
+        <small id="economiaInicial"></small>
+
+      </div>
+
+      <div class="stat">
+
+        <small>Menor custo anual</small>
+
+        <strong id="menorAno"></strong>
+
+        <small id="economiaAno"></small>
+
+      </div>
+
+    </div>
+
+    <div class="section-title">Comparação detalhada</div>
+
+    <div id="detalhes"></div>
+
+    <div class="section-title">Veredito final</div>
+
+    <p class="verdict" id="veredito"></p>
+
+    <p class="disclaimer">Esta análise usa os dados informados por você. Não inclui manutenção, reparos, consumo de energia, revenda, inflação ou diferenças de qualidade. A recomendação é uma estimativa, não uma garantia.</p>
+
+    <button id="nova" class="primary" type="button">Nova comparação</button>
+
+  </section>
+
+  <section class="panel">
+
+    <h2>Como funciona?</h2>
+
+    <p class="subtitle" style="margin-bottom:0">O site calcula custo anual e custo por utilização estimados. A recomendação considera sua prioridade e os dados fornecidos. Avalie também qualidade, garantia, recursos e necessidades pessoais.</p>
+
+  </section>
+
+</main>
+
+<footer>VALE A PENA? · Pense antes de gastar.</footer>
+
+<script>
+
+(function(){
+
+  "use strict";
+
+  const el = id => document.getElementById(id);
+
+  function valor(id){
+
+    return Number(el(id).value);
+
+  }
+
+  function dinheiro(n){
+
+    return n.toLocaleString("pt-BR",{
+
+      style:"currency",
+
+      currency:"BRL"
+
+    });
+
+  }
+
+  function formatar(n){
+
+    return n.toLocaleString("pt-BR",{
+
+      minimumFractionDigits:2,
+
+      maximumFractionDigits:2
+
+    });
+
+  }
+
+  function seguro(s){
+
+    return String(s).replace(/[&<>"']/g,function(c){
+
+      return {
+
+        "&":"&amp;",
+
+        "<":"&lt;",
+
+        ">":"&gt;",
+
+        '"':"&quot;",
+
+        "'":"&#39;"
+
+      }[c];
+
+    });
+
+  }
+
+  function linha(titulo,a,b,formato,melhor){
+
+    const aMelhor = melhor==="menor" ? a<b : a>b;
+
+    const bMelhor = melhor==="menor" ? b<a : b>a;
+
+    return '<div class="comparison-row">' +
+
+      '<div class="metric">'+titulo+'</div>' +
+
+      '<div class="values">' +
+
+      '<div class="value '+(aMelhor?'best':'')+'">' +
+
+      '<strong>'+formato(a)+'</strong>' +
+
+      (aMelhor?'<span class="badge">MELHOR</span>':'') +
+
+      '</div>' +
+
+      '<div class="value '+(bMelhor?'best':'')+'">' +
+
+      '<strong>'+formato(b)+'</strong>' +
+
+      (bMelhor?'<span class="badge">MELHOR</span>':'') +
+
+      '</div></div></div>';
+
+  }
+
+  el("formulario").addEventListener("submit",function(event){
+
+    event.preventDefault();
+
+    el("erro").textContent="";
+
+    const a={
+
+      nome:el("nomeA").value.trim(),
+
+      preco:valor("precoA"),
+
+      dur:valor("durA"),
+
+      uso:valor("usoA")
+
+    };
+
+    const b={
+
+      nome:el("nomeB").value.trim(),
+
+      preco:valor("precoB"),
+
+      dur:valor("durB"),
+
+      uso:valor("usoB")
+
+    };
+
+    if(!a.nome || !b.nome){
+
+      el("erro").textContent="Informe os nomes dos dois produtos.";
+
+      return;
+
+    }
+
+    if(![a.preco,b.preco,a.dur,b.dur,a.uso,b.uso].every(Number.isFinite) ||
+
+       a.preco<=0 || b.preco<=0 ||
+
+       a.dur<=0 || b.dur<=0 ||
+
+       a.uso<0 || b.uso<0){
+
+      el("erro").textContent="Confira os dados. Preços e duração devem ser maiores que zero; usos não podem ser negativos.";
+
+      return;
+
+    }
+
+    a.ano=a.preco/a.dur;
+
+    b.ano=b.preco/b.dur;
+
+    a.total=a.uso*52*a.dur;
+
+    b.total=b.uso*52*b.dur;
+
+    a.porUso=a.total>0?a.preco/a.total:null;
+
+    b.porUso=b.total>0?b.preco/b.total:null;
+
+    const prioridade=el("prioridade").value;
+
+    let pontosA=0;
+
+    let pontosB=0;
+
+    if(a.preco<b.preco)pontosA++;
+
+    else if(b.preco<a.preco)pontosB++;
+
+    if(a.ano<b.ano)pontosA++;
+
+    else if(b.ano<a.ano)pontosB++;
+
+    if(a.porUso!==null && b.porUso!==null){
+
+      if(a.porUso<b.porUso)pontosA++;
+
+      else if(b.porUso<a.porUso)pontosB++;
+
+    }
+
+    let escolhido=null;
+
+    let motivo="";
+
+    if(prioridade==="preco"){
+
+      if(a.preco!==b.preco){
+
+        escolhido=a.preco<b.preco?a:b;
+
+        motivo="Tem o menor preço inicial.";
+
+      }else{
+
+        motivo="Os dois produtos têm o mesmo preço.";
+
+      }
+
+    }else if(prioridade==="durabilidade"){
+
+      if(a.dur!==b.dur){
+
+        escolhido=a.dur>b.dur?a:b;
+
+        motivo="Tem a maior duração estimada.";
+
+      }else{
+
+        motivo="Os dois produtos têm a mesma duração estimada.";
+
+      }
+
+    }else if(prioridade==="uso"){
+
+      if(a.porUso!==null && b.porUso!==null && a.porUso!==b.porUso){
+
+        escolhido=a.porUso<b.porUso?a:b;
+
+        motivo="Tem o menor custo estimado por utilização.";
+
+      }else{
+
+        motivo="Não há um vencedor claro pelo custo por uso.";
+
+      }
+
+    }else{
+
+      if(pontosA!==pontosB){
+
+        escolhido=pontosA>pontosB?a:b;
+
+        motivo="Vence em mais critérios calculados nesta comparação.";
+
+      }else{
+
+        motivo="Não há um vencedor claro pelos critérios calculados.";
+
+      }
+
+    }
+
+    el("vencedor").textContent=escolhido?escolhido.nome:"Empate nos critérios";
+
+    el("motivo").textContent=motivo;
+
+    el("menorPreco").textContent=dinheiro(Math.min(a.preco,b.preco));
+
+    el("economiaInicial").textContent="Diferença: "+dinheiro(Math.abs(a.preco-b.preco));
+
+    el("menorAno").textContent=dinheiro(Math.min(a.ano,b.ano));
+
+    el("economiaAno").textContent="Diferença: "+dinheiro(Math.abs(a.ano-b.ano))+" por ano";
+
+    el("detalhes").innerHTML=
+
+      '<div class="comparison-row"><div class="values">' +
+
+      '<div class="value"><strong>'+seguro(a.nome)+'</strong></div>' +
+
+      '<div class="value"><strong>'+seguro(b.nome)+'</strong></div>' +
+
+      '</div></div>' +
+
+      linha("Preço inicial",a.preco,b.preco,dinheiro,"menor") +
+
+      linha("Duração estimada",a.dur,b.dur,n=>formatar(n)+" anos","maior") +
+
+      linha("Custo por ano",a.ano,b.ano,dinheiro,"menor") +
+
+      linha("Usos estimados durante a vida útil",a.total,b.total,n=>Math.round(n).toLocaleString("pt-BR"),"maior") +
+
+      linha("Custo estimado por utilização",
+
+        a.porUso===null?Infinity:a.porUso,
+
+        b.porUso===null?Infinity:b.porUso,
+
+        n=>Number.isFinite(n)?dinheiro(n):"Sem uso informado",
+
+        "menor");
+
+    let veredito="";
+
+    if(prioridade==="preco"){
+
+      veredito=escolhido
+
+        ?escolhido.nome+" custa menos inicialmente. Avalie se a economia compensa as diferenças de durabilidade, qualidade e manutenção."
+
+        :"Os dois produtos têm o mesmo preço inicial.";
+
+    }else if(prioridade==="durabilidade"){
+
+      veredito=escolhido
+
+        ?escolhido.nome+" tem a maior duração estimada informada. Isso não é uma garantia de vida útil."
+
+        :"A duração estimada é igual para os dois produtos.";
+
+    }else if(prioridade==="uso"){
+
+      veredito=(a.porUso===null || b.porUso===null)
+
+        ?"Informe uma frequência de uso maior que zero para os dois produtos para comparar o custo por utilização."
+
+        :(escolhido
+
+          ?escolhido.nome+" apresenta o menor custo estimado por utilização, de acordo com os dados informados."
+
+          :"O custo por utilização calculado é igual para os dois produtos.");
+
+    }else{
+
+      veredito=escolhido
+
+        ?escolhido.nome+" vence em mais critérios numéricos nesta comparação. Considere também qualidade, garantia, recursos e custos adicionais."
+
+        :"Os critérios calculados ficaram empatados. Considere qualidade, garantia, recursos e suas preferências.";
+
+    }
+
+    el("veredito").textContent=veredito;
+
+    el("resultado").classList.remove("hidden");
+
+    el("resultado").scrollIntoView({
+
+      behavior:"smooth",
+
+      block:"start"
+
+    });
+
+  });
+
+  el("nova").addEventListener("click",function(){
+
+    el("formulario").reset();
+
+    el("resultado").classList.add("hidden");
+
+    el("erro").textContent="";
+
+    window.scrollTo({top:0,behavior:"smooth"});
+
+  });
+
+})();
+
+</script>
+
+</body>
+
+</html>
